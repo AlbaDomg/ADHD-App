@@ -1,10 +1,10 @@
 .task-dashboard {
   width: 100%;
-  max-width: 500px;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   gap: 24px;
-  padding: 8px;
+  padding: 8px 0;
 }
 
 .dashboard-header-card {
@@ -405,5 +405,19 @@
   .action-btn.focus-btn {
     flex: 1;
     justify-content: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .dashboard-task-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+    gap: 20px;
+  }
+
+  .completed-task-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+    gap: 20px;
   }
 }

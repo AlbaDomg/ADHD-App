@@ -159,3 +159,16 @@
     padding: 20px 16px;
   }
 }
+
+@media (min-width: 768px) {
+  .add-task-form {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+  
+  .task-list-preview ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 12px;
+  }
+}

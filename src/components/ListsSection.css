@@ -2,7 +2,7 @@
 
 .lists-section {
   width: 100%;
-  max-width: 550px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -648,4 +648,12 @@
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@media (min-width: 768px) {
+  .lists-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+  }
 }

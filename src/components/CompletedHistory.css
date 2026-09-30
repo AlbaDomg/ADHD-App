@@ -100,3 +100,11 @@
 .clear-history-btn:active {
   transform: translateY(0);
 }
+
+@media (min-width: 768px) {
+  .history-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 16px;
+  }
+}
