@@ -4,23 +4,27 @@
 }
 
 .magic-btn {
-  background-color: var(--color-bg-secondary);
+  background-color: var(--color-bg);
   color: var(--color-text-main);
-  border: 2px dashed #D4CCC0;
+  border: 1.5px dashed var(--color-accent-peach);
   width: 100%;
   padding: 16px;
-  font-size: 1.1rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
   border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-fast);
 }
 
 .magic-btn:hover {
-  background-color: #F0E9DC;
-  border-color: var(--color-accent-peach);
+  background-color: var(--color-accent-peach-light);
+  border-color: var(--color-accent-terracotta);
   color: var(--color-accent-terracotta);
 }
 
 .magic-btn:disabled {
-  opacity: 0.7;
+  opacity: 0.6;
   cursor: not-allowed;
 }
 
@@ -35,20 +39,23 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  padding: 16px;
-  background-color: var(--color-bg-secondary);
+  padding: 16px 20px;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: var(--transition-smooth);
+  transition: var(--transition-fast);
 }
 
 .step-item:hover {
   transform: translateX(4px);
-  background-color: #EAE3D5;
+  background-color: var(--color-accent-peach-light);
+  border-color: var(--color-accent-peach);
 }
 
 .step-item.completed {
-  opacity: 0.6;
+  opacity: 0.65;
+  background-color: var(--color-bg-secondary);
 }
 
 .step-item.completed .step-text {
@@ -66,7 +73,7 @@
 }
 
 .step-text {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 600;
   color: var(--color-text-main);
 }
@@ -77,28 +84,30 @@
 }
 
 .manual-btn {
-  background-color: var(--color-bg-secondary);
+  background-color: var(--color-bg);
   color: var(--color-text-main);
-  border: 2px dashed #D4CCC0;
+  border: 1.5px dashed var(--color-border);
   width: 100%;
   padding: 16px;
-  font-size: 1.1rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   cursor: pointer;
-  transition: var(--transition-smooth);
+  transition: var(--transition-fast);
 }
 
 .manual-btn:hover {
-  background-color: #EAE3D5;
+  background-color: var(--color-bg-secondary);
   border-color: var(--color-text-main);
 }
 
 .manual-steps-setup {
-  background-color: var(--color-bg-secondary);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border-subtle);
   padding: 24px;
   border-radius: var(--radius-md);
   display: flex;
@@ -107,8 +116,9 @@
 }
 
 .manual-steps-title {
-  font-size: 1.05rem;
-  font-weight: 600;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
   color: var(--color-text-main);
   margin-bottom: 8px;
 }
@@ -121,21 +131,23 @@
 
 .manual-step-input {
   width: 100%;
-  padding: 12px;
+  padding: 12px 16px;
   font-size: 1rem;
-  border: 2px solid #D4CCC0;
+  border: 1.5px solid var(--color-border);
   border-radius: var(--radius-sm);
   outline: none;
-  font-family: inherit;
-  transition: var(--transition-smooth);
+  font-family: var(--font-body);
+  transition: var(--transition-fast);
 }
 
 .manual-step-input:focus {
-  border-color: var(--color-accent-peach);
+  border-color: var(--color-accent-terracotta);
+  box-shadow: 0 0 0 3px rgba(217, 107, 67, 0.15);
 }
 
 .save-steps-btn {
   margin-top: 8px;
   width: 100%;
 }
+
 

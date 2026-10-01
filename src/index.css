@@ -1,37 +1,53 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap');
 
 :root {
-  /* Paleta de colores cálida y amigable */
-  --color-bg: #FDFBF7; /* Beige muy suave */
-  --color-bg-secondary: #F4EFE6; /* Beige texturizado */
-  --color-text-main: #4A443F; /* Marrón oscuro / Gris cálido */
-  --color-text-muted: #8B8378; /* Marrón grisáceo suave */
-  
-  --color-accent-terracotta: #E28F79;
-  --color-accent-peach: #F6B8A2;
-  --color-success-olive: #A4B494;
-  --color-danger-soft: #D98C8C;
-  
+  /* Tipografía Artesanal */
+  --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Paleta Cálida & Humana (Tema por Defecto: Calma Terracota) */
+  --color-bg: #FAF6F0; /* Crema artesanal muy suave */
+  --color-bg-secondary: #F0E8DD; /* Beige pergamino texturizado */
   --color-card-bg: #FFFFFF;
-  
-  /* Radios amigables */
-  --radius-sm: 12px;
-  --radius-md: 20px;
+  --color-border: rgba(74, 68, 63, 0.12);
+  --color-border-subtle: rgba(74, 68, 63, 0.06);
+
+  --color-text-main: #2C2623; /* Marrón espresso profundo */
+  --color-text-muted: #726A61; /* Marrón tostado suave */
+
+  --color-accent-terracotta: #D96B43; /* Terracota vivo orgánico */
+  --color-accent-terracotta-hover: #C55831;
+  --color-accent-peach: #EBA88D; /* Durazno artesanal */
+  --color-accent-peach-light: #FDF1EC;
+  --color-success-olive: #688556; /* Oliva natural suave */
+  --color-danger-soft: #CD5C5C; /* Coral suave */
+
+  /* Radios con intención de diseño */
+  --radius-xs: 8px;
+  --radius-sm: 14px;
+  --radius-md: 22px;
   --radius-lg: 32px;
   --radius-full: 9999px;
 
-  /* Sombras suaves */
-  --shadow-soft: 0 8px 24px rgba(74, 68, 63, 0.05);
-  --shadow-hover: 0 12px 32px rgba(74, 68, 63, 0.08);
+  /* Sombras de profundidad multicapa hechas a mano */
+  --shadow-sm: 0 2px 6px rgba(44, 38, 35, 0.04);
+  --shadow-soft: 0 4px 20px -2px rgba(44, 38, 35, 0.06), 0 2px 6px -1px rgba(44, 38, 35, 0.03);
+  --shadow-hover: 0 12px 32px -4px rgba(44, 38, 35, 0.1), 0 4px 12px -2px rgba(44, 38, 35, 0.04);
+  --shadow-glow: 0 0 20px rgba(217, 107, 67, 0.18);
 
-  /* Transiciones */
-  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Transiciones fluidas */
+  --transition-fast: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-bounce: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html, body {
@@ -40,8 +56,12 @@ html, body {
 }
 
 body {
-  font-family: 'Nunito', sans-serif;
+  font-family: var(--font-body);
   background-color: var(--color-bg);
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(217, 107, 67, 0.03) 0%, transparent 40%),
+    radial-gradient(circle at 85% 85%, rgba(104, 133, 86, 0.03) 0%, transparent 40%);
+  background-attachment: fixed;
   color: var(--color-text-main);
   line-height: 1.6;
   min-height: 100vh;
@@ -54,50 +74,68 @@ body {
   flex-direction: column;
   min-height: 100vh;
   width: 100%;
-  max-width: 600px;
+  max-width: 680px;
   margin: 0 auto;
-  padding: 16px;
+  padding: 16px 20px;
   box-sizing: border-box;
 }
 
 @media (min-width: 768px) {
   #root {
     max-width: 100%;
-    padding: 28px 40px;
+    padding: 32px 48px;
   }
 }
 
 @media (min-width: 1200px) {
   #root {
-    max-width: 1400px;
-    padding: 32px 48px;
+    max-width: 1320px;
+    padding: 40px 64px;
   }
 }
 
-/* Tipografía */
-h1, h2, h3, h4 {
+/* Tipografía Editorial */
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
   font-weight: 700;
   color: var(--color-text-main);
+  letter-spacing: -0.025em;
+  line-height: 1.25;
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 2.2rem;
+  font-weight: 800;
   margin-bottom: 1rem;
 }
 
+h2 {
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
 p {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: var(--color-text-muted);
 }
 
-/* Botones genéricos */
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Botones Táctiles */
 button {
-  font-family: 'Nunito', sans-serif;
-  font-weight: 700;
-  border: none;
+  font-family: var(--font-display);
+  font-weight: 600;
+  border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-full);
-  padding: 14px 24px;
-  font-size: 1.1rem;
+  padding: 12px 22px;
+  font-size: 1rem;
   cursor: pointer;
   transition: var(--transition-smooth);
   display: flex;
@@ -106,151 +144,225 @@ button {
   gap: 8px;
   background: var(--color-bg-secondary);
   color: var(--color-text-main);
+  box-shadow: var(--shadow-sm);
+  user-select: none;
 }
 
 button:hover {
   transform: translateY(-2px);
-  box-shadow: var(--shadow-soft);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--color-border);
 }
 
 button:active {
-  transform: translateY(0);
+  transform: translateY(1px) scale(0.98);
+  box-shadow: var(--shadow-sm);
 }
 
 button.primary {
-  background-color: var(--color-accent-terracotta);
+  background: linear-gradient(135deg, var(--color-accent-terracotta) 0%, var(--color-accent-terracotta-hover) 100%);
   color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 14px rgba(217, 107, 67, 0.28);
 }
 
 button.primary:hover {
-  background-color: #d17c66;
+  background: linear-gradient(135deg, #e4754d 0%, #b84e27 100%);
+  box-shadow: 0 6px 20px rgba(217, 107, 67, 0.38);
 }
 
 button.success {
-  background-color: var(--color-success-olive);
+  background: linear-gradient(135deg, var(--color-success-olive) 0%, #577247 100%);
   color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 14px rgba(104, 133, 86, 0.28);
 }
 
 button.success:hover {
-  background-color: #92a282;
+  background: linear-gradient(135deg, #749361 0%, #4b643d 100%);
+  box-shadow: 0 6px 20px rgba(104, 133, 86, 0.38);
 }
 
 /* Utilidades */
 .fade-in {
-  animation: fadeIn 0.5s ease-out forwards;
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
+  from { opacity: 0; transform: translateY(12px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 .pulse {
-  animation: pulseSoft 2s infinite ease-in-out;
+  animation: pulseSoft 2.5s infinite cubic-bezier(0.4, 0, 0.6, 1);
 }
 
 @keyframes pulseSoft {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.04); opacity: 0.92; }
 }
 
-/* Temas de Color */
+/* Temas de Color Curados por Diseñador */
+
+/* Lavanda Orgánico */
 .theme-lavender {
-  --color-bg: #F5F3F9;
-  --color-bg-secondary: #EBE5F5;
-  --color-text-main: #3F374A;
-  --color-text-muted: #796E87;
-  --color-accent-terracotta: #8F79E2;
-  --color-accent-peach: #C3B8E6;
-  --color-success-olive: #7DA49A;
-  --color-danger-soft: #D98C8C;
+  --color-bg: #F6F4FA;
+  --color-bg-secondary: #EBE5F3;
   --color-card-bg: #FFFFFF;
-  --shadow-soft: 0 8px 24px rgba(121, 110, 135, 0.05);
-  --shadow-hover: 0 12px 32px rgba(121, 110, 135, 0.08);
+  --color-border: rgba(65, 50, 85, 0.12);
+  --color-border-subtle: rgba(65, 50, 85, 0.06);
+
+  --color-text-main: #2D243A;
+  --color-text-muted: #6E637E;
+
+  --color-accent-terracotta: #7B5EC9;
+  --color-accent-terracotta-hover: #674AB3;
+  --color-accent-peach: #BCA9EC;
+  --color-accent-peach-light: #F2EEFD;
+  --color-success-olive: #5B8B7F;
+  --color-danger-soft: #D46A6A;
+
+  --shadow-soft: 0 4px 20px -2px rgba(45, 36, 58, 0.06);
+  --shadow-hover: 0 12px 32px -4px rgba(45, 36, 58, 0.12);
+  --shadow-glow: 0 0 20px rgba(123, 94, 201, 0.2);
 }
 
+/* Bosque Silvestre */
 .theme-forest {
-  --color-bg: #F3F6F3;
-  --color-bg-secondary: #E5EBE5;
-  --color-text-main: #2E3A2E;
-  --color-text-muted: #687568;
-  --color-accent-terracotta: #4A7C59;
-  --color-accent-peach: #A8C3A8;
-  --color-success-olive: #6E9075;
-  --color-danger-soft: #D98C8C;
+  --color-bg: #F4F7F4;
+  --color-bg-secondary: #E4ECE4;
   --color-card-bg: #FFFFFF;
-  --shadow-soft: 0 8px 24px rgba(46, 58, 46, 0.05);
-  --shadow-hover: 0 12px 32px rgba(46, 58, 46, 0.08);
+  --color-border: rgba(36, 48, 36, 0.12);
+  --color-border-subtle: rgba(36, 48, 36, 0.06);
+
+  --color-text-main: #212C21;
+  --color-text-muted: #576857;
+
+  --color-accent-terracotta: #3B724D;
+  --color-accent-terracotta-hover: #2F5D3E;
+  --color-accent-peach: #97C497;
+  --color-accent-peach-light: #EEF6EE;
+  --color-success-olive: #57805F;
+  --color-danger-soft: #C85F5F;
+
+  --shadow-soft: 0 4px 20px -2px rgba(33, 44, 33, 0.06);
+  --shadow-hover: 0 12px 32px -4px rgba(33, 44, 33, 0.12);
+  --shadow-glow: 0 0 20px rgba(59, 114, 77, 0.2);
 }
 
+/* Océano Nórdico */
 .theme-sunset {
-  --color-bg: #F0F4F8;
-  --color-bg-secondary: #DDE5ED;
-  --color-text-main: #1C2D42;
-  --color-text-muted: #546E8A;
-  --color-accent-terracotta: #2B6CB0;
-  --color-accent-peach: #63B3ED;
-  --color-success-olive: #48BB78;
-  --color-danger-soft: #D98C8C;
+  --color-bg: #F2F6F9;
+  --color-bg-secondary: #DEE7F0;
   --color-card-bg: #FFFFFF;
-  --shadow-soft: 0 8px 24px rgba(28, 45, 66, 0.05);
-  --shadow-hover: 0 12px 32px rgba(28, 45, 66, 0.08);
+  --color-border: rgba(24, 40, 60, 0.12);
+  --color-border-subtle: rgba(24, 40, 60, 0.06);
+
+  --color-text-main: #18283C;
+  --color-text-muted: #4B637F;
+
+  --color-accent-terracotta: #2563EB;
+  --color-accent-terracotta-hover: #1D4ED8;
+  --color-accent-peach: #93C5FD;
+  --color-accent-peach-light: #EFF6FF;
+  --color-success-olive: #10B981;
+  --color-danger-soft: #EF4444;
+
+  --shadow-soft: 0 4px 20px -2px rgba(24, 40, 60, 0.06);
+  --shadow-hover: 0 12px 32px -4px rgba(24, 40, 60, 0.12);
+  --shadow-glow: 0 0 20px rgba(37, 99, 235, 0.2);
 }
 
+/* Neón Neón / Cyber Obsidian */
 .theme-cyberpunk {
-  --color-bg: #0F0C1B;
-  --color-bg-secondary: #1F1936;
-  --color-text-main: #E0E0FF;
-  --color-text-muted: #8B8BAF;
+  --color-bg: #0D0A1A;
+  --color-bg-secondary: #19142E;
+  --color-card-bg: #151026;
+  --color-border: rgba(255, 42, 122, 0.25);
+  --color-border-subtle: rgba(255, 255, 255, 0.08);
+
+  --color-text-main: #F0F0FF;
+  --color-text-muted: #9593C0;
+
   --color-accent-terracotta: #FF2A7A;
+  --color-accent-terracotta-hover: #E01865;
   --color-accent-peach: #00F0FF;
-  --color-success-olive: #39FF14;
-  --color-danger-soft: #FF3838;
-  --color-card-bg: #17132B;
-  --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.4);
-  --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.6);
+  --color-accent-peach-light: rgba(0, 240, 255, 0.12);
+  --color-success-olive: #00E676;
+  --color-danger-soft: #FF3D71;
+
+  --shadow-soft: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
+  --shadow-hover: 0 12px 36px -4px rgba(0, 0, 0, 0.7);
+  --shadow-glow: 0 0 24px rgba(255, 42, 122, 0.35);
 }
 
+/* Estudio Minimalista (Slate) */
 .theme-slate {
-  --color-bg: #F8F9FA;
-  --color-bg-secondary: #E9ECEF;
-  --color-text-main: #212529;
-  --color-text-muted: #6C757D;
-  --color-accent-terracotta: #495057;
-  --color-accent-peach: #ADB5BD;
-  --color-success-olive: #6C757D;
-  --color-danger-soft: #DEE2E6;
+  --color-bg: #F7F8F9;
+  --color-bg-secondary: #E8ECEF;
   --color-card-bg: #FFFFFF;
-  --shadow-soft: 0 8px 24px rgba(0,0,0,0.03);
-  --shadow-hover: 0 12px 32px rgba(0,0,0,0.05);
+  --color-border: rgba(30, 35, 42, 0.12);
+  --color-border-subtle: rgba(30, 35, 42, 0.06);
+
+  --color-text-main: #1E232A;
+  --color-text-muted: #626A74;
+
+  --color-accent-terracotta: #334155;
+  --color-accent-terracotta-hover: #1E293B;
+  --color-accent-peach: #94A3B8;
+  --color-accent-peach-light: #F1F5F9;
+  --color-success-olive: #475569;
+  --color-danger-soft: #E2E8F0;
+
+  --shadow-soft: 0 4px 20px -2px rgba(30, 35, 42, 0.05);
+  --shadow-hover: 0 12px 32px -4px rgba(30, 35, 42, 0.1);
+  --shadow-glow: 0 0 20px rgba(51, 65, 85, 0.15);
 }
 
+/* Sakura Cerezos */
 .theme-sakura {
-  --color-bg: #FFF5F6;
-  --color-bg-secondary: #FFE3E5;
-  --color-text-main: #4A3538;
-  --color-text-muted: #8F7275;
-  --color-accent-terracotta: #D38E96;
-  --color-accent-peach: #FFB3BA;
-  --color-success-olive: #98B0A0;
-  --color-danger-soft: #E6A3A3;
+  --color-bg: #FAF4F5;
+  --color-bg-secondary: #F3E4E6;
   --color-card-bg: #FFFFFF;
-  --shadow-soft: 0 8px 24px rgba(74, 53, 56, 0.04);
-  --shadow-hover: 0 12px 32px rgba(74, 53, 56, 0.06);
+  --color-border: rgba(75, 45, 50, 0.12);
+  --color-border-subtle: rgba(75, 45, 50, 0.06);
+
+  --color-text-main: #3A2629;
+  --color-text-muted: #7E6367;
+
+  --color-accent-terracotta: #C86D7A;
+  --color-accent-terracotta-hover: #B25663;
+  --color-accent-peach: #F4A7B3;
+  --color-accent-peach-light: #FDF0F2;
+  --color-success-olive: #7DA48B;
+  --color-danger-soft: #DF7E7E;
+
+  --shadow-soft: 0 4px 20px -2px rgba(58, 38, 41, 0.06);
+  --shadow-hover: 0 12px 32px -4px rgba(58, 38, 41, 0.12);
+  --shadow-glow: 0 0 20px rgba(200, 109, 122, 0.2);
 }
 
+/* Noche Estrellada */
 .theme-stars {
-  --color-bg: #0B0E14;
-  --color-bg-secondary: #161C26;
-  --color-text-main: #E2E8F0;
-  --color-text-muted: #7E8B9B;
-  --color-accent-terracotta: #F4D068;
-  --color-accent-peach: #90CDF4;
-  --color-success-olive: #48BB78;
-  --color-danger-soft: #FEB2B2;
-  --color-card-bg: #1A202C;
-  --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.3);
-  --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.5);
+  --color-bg: #0C1017;
+  --color-bg-secondary: #171E2B;
+  --color-card-bg: #131924;
+  --color-border: rgba(244, 208, 104, 0.2);
+  --color-border-subtle: rgba(255, 255, 255, 0.08);
+
+  --color-text-main: #E9EEF5;
+  --color-text-muted: #8896AA;
+
+  --color-accent-terracotta: #E5B942;
+  --color-accent-terracotta-hover: #D4A52A;
+  --color-accent-peach: #7CD4FD;
+  --color-accent-peach-light: rgba(124, 212, 253, 0.12);
+  --color-success-olive: #34D399;
+  --color-danger-soft: #F87171;
+
+  --shadow-soft: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
+  --shadow-hover: 0 12px 36px -4px rgba(0, 0, 0, 0.6);
+  --shadow-glow: 0 0 24px rgba(229, 185, 66, 0.25);
 }
+
 

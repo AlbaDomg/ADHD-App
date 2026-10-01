@@ -1,12 +1,13 @@
 .paralysis-mode {
-  background-color: var(--color-bg-secondary);
+  background-color: var(--color-bg);
   border-radius: var(--radius-lg);
-  padding: 32px;
+  padding: 36px 28px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   width: 100%;
+  border: 1px solid var(--color-border-subtle);
 }
 
 .paralysis-header {
@@ -14,32 +15,36 @@
 }
 
 .paralysis-header h2 {
-  font-size: 2rem;
+  font-family: var(--font-display);
+  font-size: 2.1rem;
   color: var(--color-text-main);
   margin-bottom: 12px;
 }
 
 .micro-task-card {
   background-color: var(--color-card-bg);
-  padding: 40px 24px;
+  padding: 44px 28px;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-soft);
+  border: 1px solid var(--color-border-subtle);
   width: 100%;
   margin-bottom: 32px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 18px;
 }
 
 .sparkle-icon {
-  color: var(--color-accent-peach);
+  color: var(--color-accent-terracotta);
+  filter: drop-shadow(0 4px 12px rgba(217, 107, 67, 0.3));
 }
 
 .micro-task-card h3 {
-  font-size: 1.5rem;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
   font-weight: 700;
-  line-height: 1.4;
+  line-height: 1.35;
 }
 
 .paralysis-actions {
@@ -53,15 +58,21 @@
 .paralysis-actions button {
   width: 100%;
   padding: 16px;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
 }
 
 .back-btn {
   background: transparent;
   color: var(--color-text-muted);
   font-weight: 600;
+  border: none;
+  box-shadow: none;
 }
 
 .back-btn:hover {
-  background-color: rgba(0,0,0,0.05);
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-main);
   box-shadow: none;
 }
+

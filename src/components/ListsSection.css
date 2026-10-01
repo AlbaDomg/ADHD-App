@@ -1,4 +1,4 @@
-/* Estilos premium para la sección de Listas */
+/* Estilos artesanales para la sección de Listas */
 
 .lists-section {
   width: 100%;
@@ -7,27 +7,28 @@
 }
 
 .lists-header {
-  margin-bottom: 24px;
+  margin-bottom: 28px;
   text-align: center;
 }
 
 .lists-header h2 {
+  font-family: var(--font-display);
   font-size: 1.8rem;
   color: var(--color-text-main);
   margin-bottom: 8px;
 }
 
 .lists-header p {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--color-text-muted);
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 /* Botón Añadir Lista */
 .add-list-btn {
   width: 100%;
-  margin-bottom: 24px;
-  background-color: var(--color-accent-terracotta);
+  margin-bottom: 28px;
+  background: linear-gradient(135deg, var(--color-accent-terracotta) 0%, var(--color-accent-terracotta-hover) 100%);
   color: white;
   border-radius: var(--radius-md);
   padding: 16px;
@@ -35,27 +36,31 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  box-shadow: 0 4px 12px rgba(226, 143, 121, 0.2);
+  font-size: 1.05rem;
+  box-shadow: 0 4px 16px rgba(217, 107, 67, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .add-list-btn:hover {
-  background-color: #d17c66;
+  background: linear-gradient(135deg, #e4754d 0%, #b84e27 100%);
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(226, 143, 121, 0.3);
+  box-shadow: 0 6px 22px rgba(217, 107, 67, 0.35);
 }
 
 /* Formulario Crear Lista */
 .create-list-card {
   background-color: var(--color-card-bg);
-  border: 2px solid var(--color-bg-secondary);
+  border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-md);
-  padding: 20px;
+  padding: 24px;
   margin-bottom: 28px;
   box-shadow: var(--shadow-soft);
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .create-list-card h3 {
-  font-size: 1.2rem;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
   margin-bottom: 16px;
   color: var(--color-text-main);
 }
@@ -65,12 +70,13 @@
 }
 
 .section-label {
-  font-size: 0.85rem;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
   color: var(--color-text-muted);
-  margin-bottom: 8px;
-  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+  letter-spacing: 0.05em;
 }
 
 .suggestions-list {
@@ -83,40 +89,44 @@
   background-color: var(--color-bg);
   color: var(--color-text-main);
   font-size: 0.9rem;
-  padding: 8px 12px;
-  border-radius: var(--radius-sm);
+  padding: 8px 14px;
+  border-radius: var(--radius-full);
   cursor: pointer;
-  transition: var(--transition-smooth);
+  transition: var(--transition-fast);
   font-weight: 600;
+  border: 1px solid var(--color-border-subtle);
 }
 
 .suggestion-chip:hover {
-  background-color: var(--color-bg-secondary);
+  background-color: var(--color-accent-peach-light);
+  border-color: var(--color-accent-peach);
+  color: var(--color-accent-terracotta);
   transform: translateY(-1px);
 }
 
 .custom-create-row {
   display: flex;
-  gap: 10px;
-  margin-top: 12px;
+  gap: 12px;
+  margin-top: 14px;
 }
 
 .list-name-input {
   flex: 1;
   background-color: var(--color-bg);
-  border: 2px solid var(--color-bg-secondary);
+  border: 1.5px solid var(--color-border);
   border-radius: var(--radius-sm);
-  padding: 12px 16px;
-  font-family: inherit;
+  padding: 12px 18px;
+  font-family: var(--font-body);
   font-size: 1rem;
   color: var(--color-text-main);
   outline: none;
-  transition: var(--transition-smooth);
+  transition: var(--transition-fast);
 }
 
 .list-name-input:focus {
-  border-color: var(--color-accent-peach);
-  background-color: white;
+  border-color: var(--color-accent-terracotta);
+  background-color: var(--color-card-bg);
+  box-shadow: 0 0 0 3px rgba(217, 107, 67, 0.15);
 }
 
 .cancel-btn {
@@ -124,26 +134,28 @@
   color: var(--color-text-muted);
   font-size: 0.95rem;
   padding: 8px 16px;
-  margin-top: 12px;
+  margin-top: 14px;
   width: 100%;
+  box-shadow: none;
 }
 
 .cancel-btn:hover {
   color: var(--color-danger-soft);
+  background: var(--color-bg);
 }
 
 /* Grid de Listas */
 .lists-grid {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 18px;
 }
 
 .list-card {
   background-color: var(--color-card-bg);
   border-radius: var(--radius-md);
-  border: 1px solid rgba(139, 131, 120, 0.08);
-  padding: 20px;
+  border: 1px solid var(--color-border-subtle);
+  padding: 22px 24px;
   box-shadow: var(--shadow-soft);
   cursor: pointer;
   transition: var(--transition-smooth);
@@ -159,12 +171,14 @@
   bottom: 0;
   width: 5px;
   background-color: var(--color-accent-peach);
+  border-top-left-radius: var(--radius-md);
+  border-bottom-left-radius: var(--radius-md);
 }
 
 .list-card:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-hover);
-  border-color: rgba(226, 143, 121, 0.15);
+  border-color: var(--color-border);
 }
 
 .list-card.completed-card::before {
@@ -175,10 +189,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .list-title-text {
+  font-family: var(--font-display);
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--color-text-main);
@@ -196,13 +211,16 @@
 .action-icon-btn {
   background-color: var(--color-bg);
   color: var(--color-text-muted);
-  width: 32px;
-  height: 32px;
-  border-radius: var(--radius-full);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0;
+  border: 1px solid var(--color-border-subtle);
+  box-shadow: none;
+  transition: var(--transition-fast);
 }
 
 .action-icon-btn:hover {
@@ -211,33 +229,38 @@
 
 .action-icon-btn.edit:hover {
   color: var(--color-accent-terracotta);
+  border-color: var(--color-accent-peach);
 }
 
 .action-icon-btn.delete:hover {
   color: var(--color-danger-soft);
+  border-color: rgba(205, 92, 92, 0.3);
 }
 
 .list-card-body {
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .progress-info {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.88rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
   font-weight: 600;
   color: var(--color-text-muted);
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .completed-badge {
-  background-color: #f6efe2;
+  background-color: #EAF3E6;
   color: var(--color-success-olive);
-  padding: 2px 8px;
+  padding: 2px 10px;
   border-radius: var(--radius-full);
+  font-family: var(--font-display);
   font-size: 0.8rem;
   font-weight: 700;
+  border: 1px solid rgba(104, 133, 86, 0.2);
 }
 
 .progress-bar-container {
@@ -251,7 +274,12 @@
 .progress-bar-fill {
   height: 100%;
   border-radius: var(--radius-full);
-  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  background: linear-gradient(90deg, var(--color-accent-peach) 0%, var(--color-accent-terracotta) 100%);
+}
+
+.list-card.completed-card .progress-bar-fill {
+  background: var(--color-success-olive);
 }
 
 .list-card-footer {
@@ -259,10 +287,11 @@
   align-items: center;
   justify-content: flex-end;
   gap: 4px;
-  font-size: 0.88rem;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
   color: var(--color-accent-terracotta);
   font-weight: 700;
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 /* Edición inline */
@@ -274,13 +303,13 @@
 
 .inline-edit-input {
   flex: 1;
-  border: 2px solid var(--color-accent-peach);
+  border: 1.5px solid var(--color-accent-terracotta);
   background-color: white;
   border-radius: var(--radius-sm);
   padding: 6px 12px;
-  font-family: inherit;
+  font-family: var(--font-display);
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--color-text-main);
   outline: none;
 }
@@ -288,26 +317,27 @@
 .icon-save-btn {
   background-color: var(--color-success-olive);
   color: white;
-  width: 32px;
-  height: 32px;
-  border-radius: var(--radius-full);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0;
+  border: none;
 }
 
 .icon-save-btn:hover {
-  background-color: #92a282;
+  background-color: #547044;
 }
 
 /* Vacío State */
 .empty-lists-state {
   text-align: center;
-  padding: 48px 24px;
+  padding: 52px 24px;
   background-color: var(--color-card-bg);
   border-radius: var(--radius-lg);
-  border: 2px dashed rgba(139, 131, 120, 0.15);
+  border: 1.5px dashed var(--color-border);
 }
 
 .empty-icon-bubble {
@@ -316,14 +346,15 @@
 }
 
 .empty-title {
-  font-size: 1.25rem;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
   font-weight: 700;
   color: var(--color-text-main);
   margin-bottom: 6px;
 }
 
 .empty-desc {
-  font-size: 0.95rem;
+  font-size: 0.98rem;
   color: var(--color-text-muted);
   line-height: 1.5;
 }
@@ -333,14 +364,15 @@
   background-color: var(--color-card-bg);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-soft);
-  padding: 24px;
+  border: 1px solid var(--color-border-subtle);
+  padding: 28px;
   width: 100%;
 }
 
 .active-list-header {
-  border-bottom: 2px solid var(--color-bg-secondary);
-  padding-bottom: 20px;
-  margin-bottom: 20px;
+  border-bottom: 1.5px solid var(--color-border-subtle);
+  padding-bottom: 22px;
+  margin-bottom: 24px;
 }
 
 .back-btn-icon {
@@ -349,20 +381,26 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 4px 12px;
+  padding: 6px 14px;
   margin-left: -12px;
   margin-bottom: 16px;
-  font-size: 0.95rem;
-  border-radius: var(--radius-sm);
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  border: none;
+  box-shadow: none;
 }
 
 .back-btn-icon:hover {
   background-color: var(--color-bg-secondary);
   color: var(--color-text-main);
+  box-shadow: none;
+  transform: translateX(-2px);
 }
 
 .active-title-container {
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 
 .active-title-display {
@@ -373,7 +411,8 @@
 }
 
 .active-title-display h2 {
-  font-size: 1.8rem;
+  font-family: var(--font-display);
+  font-size: 1.85rem;
   color: var(--color-text-main);
   word-break: break-word;
 }
@@ -383,11 +422,13 @@
   color: var(--color-text-muted);
   width: 36px;
   height: 36px;
-  border-radius: var(--radius-full);
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0;
+  border: 1px solid var(--color-border-subtle);
+  box-shadow: none;
 }
 
 .edit-title-btn:hover {
@@ -403,13 +444,13 @@
 
 .inline-title-input {
   flex: 1;
+  font-family: var(--font-display);
   font-size: 1.5rem;
   font-weight: 700;
   padding: 8px 16px;
-  border: 2px solid var(--color-accent-peach);
+  border: 1.5px solid var(--color-accent-terracotta);
   border-radius: var(--radius-sm);
   outline: none;
-  font-family: inherit;
   color: var(--color-text-main);
 }
 
@@ -422,19 +463,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
 }
 
 /* Barra progreso en lista activa */
 .active-progress-section {
   background-color: var(--color-bg);
-  padding: 12px 16px;
+  padding: 14px 18px;
   border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-subtle);
 }
 
 .progress-text-row {
   display: flex;
   justify-content: space-between;
-  font-size: 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
   font-weight: 700;
   color: var(--color-text-muted);
   margin-bottom: 8px;
@@ -450,32 +494,34 @@
 .active-progress-fill {
   height: 100%;
   border-radius: var(--radius-full);
-  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  background: linear-gradient(90deg, var(--color-accent-peach) 0%, var(--color-accent-terracotta) 100%);
 }
 
 /* Formulario Añadir Item */
 .add-item-form {
   display: flex;
-  gap: 8px;
-  margin-bottom: 24px;
+  gap: 10px;
+  margin-bottom: 26px;
 }
 
 .new-item-input {
   flex: 1;
   background-color: var(--color-bg);
-  border: 2px solid var(--color-bg-secondary);
+  border: 1.5px solid var(--color-border);
   border-radius: var(--radius-sm);
   padding: 14px 18px;
-  font-family: inherit;
+  font-family: var(--font-body);
   font-size: 1rem;
   color: var(--color-text-main);
   outline: none;
-  transition: var(--transition-smooth);
+  transition: var(--transition-fast);
 }
 
 .new-item-input:focus {
-  border-color: var(--color-accent-peach);
-  background-color: white;
+  border-color: var(--color-accent-terracotta);
+  background-color: var(--color-card-bg);
+  box-shadow: 0 0 0 3px rgba(217, 107, 67, 0.15);
 }
 
 .add-item-submit {
@@ -488,10 +534,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
 }
 
 .add-item-submit:disabled {
-  opacity: 0.5;
+  opacity: 0.4;
   cursor: not-allowed;
 }
 
@@ -510,35 +557,37 @@
 .items-group {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .group-label {
-  font-size: 0.85rem;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
   text-transform: uppercase;
   font-weight: 800;
   color: var(--color-text-muted);
-  letter-spacing: 0.5px;
+  letter-spacing: 0.05em;
   margin-bottom: 4px;
 }
 
 .todo-item {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   background-color: var(--color-bg);
-  border: 1px solid rgba(139, 131, 120, 0.05);
+  border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-sm);
-  padding: 14px 16px;
+  padding: 14px 18px;
   cursor: pointer;
-  transition: var(--transition-smooth);
+  transition: var(--transition-fast);
   user-select: none;
-  min-height: 52px;
+  min-height: 54px;
 }
 
 .todo-item:hover {
-  background-color: var(--color-bg-secondary);
-  transform: translateX(2px);
+  background-color: var(--color-accent-peach-light);
+  border-color: var(--color-accent-peach);
+  transform: translateX(3px);
 }
 
 .checkbox-icon {
@@ -568,21 +617,23 @@
 }
 
 .dopamine-badge {
-  background-color: #fff4f0;
+  background-color: var(--color-accent-peach-light);
   color: var(--color-accent-terracotta);
-  border: 1px solid rgba(226, 143, 121, 0.15);
-  padding: 2px 8px;
+  border: 1px solid rgba(217, 107, 67, 0.2);
+  padding: 2px 10px;
   border-radius: var(--radius-full);
   display: flex;
   align-items: center;
   gap: 4px;
+  font-family: var(--font-mono);
   font-size: 0.8rem;
   font-weight: 700;
 }
 
 .todo-item.completed {
-  background-color: #faf9f6;
+  background-color: #FAF8F5;
   border-color: transparent;
+  opacity: 0.75;
 }
 
 .todo-item.completed:hover {
@@ -591,7 +642,7 @@
 
 .empty-items-state {
   text-align: center;
-  padding: 32px;
+  padding: 36px;
   color: var(--color-text-muted);
 }
 
@@ -605,16 +656,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 32px;
-  border-top: 2px solid var(--color-bg-secondary);
-  padding-top: 20px;
+  margin-top: 36px;
+  border-top: 1.5px solid var(--color-border-subtle);
+  padding-top: 22px;
   gap: 12px;
   flex-wrap: wrap;
 }
 
 .footer-action-btn {
   font-size: 0.95rem;
-  padding: 10px 18px;
+  padding: 10px 20px;
 }
 
 .footer-action-btn.clean {
@@ -623,7 +674,7 @@
 }
 
 .footer-action-btn.clean:hover:not(:disabled) {
-  background-color: #ebdcb9;
+  background-color: var(--color-border-subtle);
 }
 
 .footer-action-btn.clean:disabled {
@@ -634,15 +685,18 @@
 .footer-action-btn.delete {
   background: transparent;
   color: var(--color-danger-soft);
+  border: none;
+  box-shadow: none;
 }
 
 .footer-action-btn.delete:hover {
-  background-color: #fff0f0;
+  background-color: #FDF0F0;
+  box-shadow: none;
 }
 
 /* Animaciones */
 .fade-in {
-  animation: fadeIn 0.3s ease-out forwards;
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes fadeIn {
@@ -657,3 +711,4 @@
     gap: 20px;
   }
 }
+
